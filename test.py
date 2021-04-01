@@ -23,7 +23,7 @@ def mg(ack, command, respond):
      respond(":warning: *Please specify Technical domain:*\n/kaz appdev\n/kaz paascore\n")
     else:
      td = command['text']
-     # If AppDev is called
+     ### If AppDev is called ###
      if td in ('AD', 'AppDev', 'appdev', 'ad', 'app dev', 'Appdev'):
             respond(
             blocks=[
@@ -71,6 +71,13 @@ def mg(ack, command, respond):
                                 		"text": "App Connect"
                                 	},
                                 	"value": "appconnect"
+                                },
+                                {
+                                	"text": {
+                                        "type": "plain_text",
+                                		"text": "Code Engine"
+                                	},
+                                	"value": "codeengine"
                                 }
                                 #,
                                 #
@@ -104,7 +111,7 @@ def mg(ack, command, respond):
                 }    
             ]
             )
-            # If PaaSCore
+     ### If PaaSCore ###
      elif td in ('PC', 'fabric', 'Fabric', 'PaaSCore','paascore', 'Paascore', 'pc'):
             respond(
                 blocks=[
@@ -138,7 +145,14 @@ def mg(ack, command, respond):
                                                 "text": "Kubernetes"
                                             },
                                             "value": "iks"
-                                        }#,
+                                        },
+                                        {
+                                    	    "text": {
+                                                "type": "plain_text",
+                                    		    "text": "Openshift"
+                                            },
+                                    	    "value": "ocp"
+                                        }
                                         #
                                     # Append the same block to add a new CI
                                     # Add CI ID and create the same file in the git.
