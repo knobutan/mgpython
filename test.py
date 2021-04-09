@@ -13,89 +13,81 @@ app = App(
 def mg(ack, command, respond):
     # Acknowledge command request
     ack()
-    
-    #if "text" not in command:
-     #print("KEY NOT FOUND")
-    # respond(":warning: *Please specify Technical domain:*\n/kaz appdev\n/kaz paascore\n")
-    #else:
-    # td = command['text']
-     ### If AppDev is called ###
-    # if td in ('AD', 'AppDev', 'appdev', 'ad', 'app dev', 'Appdev'):
     respond(
-            blocks=[
-                {
-                    "type": "section",
-                    "text": {"type": "mrkdwn", "text": ":mag: *Mustgather bot: Select CI*"}
-                },
-                {
-                    "type": "actions",
-                    "block_id": "actionsblock1",
-                    "elements": [
-                        {
-                            "type": "static_select",
-                            "placeholder": {
-                                "type": "plain_text",
-                                "text": "Select CI"
+        blocks=[
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": ":mag: *Mustgather bot: Select CI*"}
+            },
+            {
+                "type": "actions",
+                "block_id": "actionsblock1",
+                "elements": [
+                    {
+                        "type": "static_select",
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": "Select CI"
+                        },
+                        "action_id": "selectci",
+                        # This option has a list of CIs
+                        "options": [
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "APIC"
+                                },
+                                "value": "apic"
                             },
-                            "action_id": "selectci",
-                            # This option has a list of CIs
-                            "options": [
-                                {
-                                    "text": {
-                                        "type": "plain_text",
-                                        "text": "APIC"
-                                    },
-                                    "value": "apic"
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Blockchain"
                                 },
-                                {
-                                    "text": {
-                                        "type": "plain_text",
-                                        "text": "Blockchain"
-                                    },
-                                    "value": "ibp"
+                                "value": "ibp"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                	"text": "logDNA"
                                 },
-                                {
-                                	"text": {
-                                        "type": "plain_text",
-                                		"text": "logDNA"
-                                	},
-                                	"value": "logdna"
+                                "value": "logdna"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                	"text": "App Connect"
                                 },
-                                {
-                                	"text": {
-                                        "type": "plain_text",
-                                		"text": "App Connect"
-                                	},
-                                	"value": "appconnect"
+                                "value": "appconnect"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                	"text": "Code Engine"
                                 },
-                                {
-                                	"text": {
-                                        "type": "plain_text",
-                                		"text": "Code Engine"
-                                	},
-                                	"value": "codeengine"
+                                "value": "codeengine"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "CF"
                                 },
-                                {
-                                            "text": {
-                                                "type": "plain_text",
-                                               "text": "CF"
-                                            },
-                                            "value": "cf"
-                                         },
-                                        {
-                                            "text": {
-                                                "type": "plain_text",
-                                                "text": "Kubernetes"
-                                            },
-                                            "value": "iks"
-                                        },
-                                        {
-                                    	    "text": {
-                                                "type": "plain_text",
-                                    		    "text": "Openshift"
-                                            },
-                                    	    "value": "ocp"
-                                        }
+                                "value": "cf"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Kubernetes"
+                                },
+                                "value": "iks"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Openshift"
+                                },
+                                "value": "ocp"
+                            }
                                 #,
                                 #
                                 # Append the same block to add a new CI
@@ -110,24 +102,24 @@ def mg(ack, command, respond):
                                 #	"value": "XXX"
                                 #}
                                 #
-                            ]
+                        ]
+                    },
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "GET"
                         },
-                        {
-                            "type": "button",
-                            "text": {
-                                "type": "plain_text",
-                                "text": "GET"
-                            },
-                            "value": "getmg",
-                            "action_id": "button_click"
-                        }
-                    ]
-                },
-                {
-                    "type": "divider"
-                }    
-            ]
-            )
+                        "value": "getmg",
+                        "action_id": "button_click"
+                    }
+                ]
+            },
+            {
+                "type": "divider"
+            }    
+        ]
+    )
      ### If PaaSCore ###
      #elif td in ('PC', 'fabric', 'Fabric', 'PaaSCore','paascore', 'Paascore', 'pc'):
      #       respond(
