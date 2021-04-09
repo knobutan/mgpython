@@ -1,7 +1,3 @@
-# Need to run these commands
-# export SLACK_BOT_TOKEN=xoxb-your-token
-# export SLACK_SIGNING_SECRET=your-signing-secret
-
 import os
 import requests
 from slack_bolt import App
@@ -25,7 +21,7 @@ def mg(ack, command, respond):
     # td = command['text']
      ### If AppDev is called ###
     # if td in ('AD', 'AppDev', 'appdev', 'ad', 'app dev', 'Appdev'):
-            respond(
+    respond(
             blocks=[
                 {
                     "type": "section",
@@ -187,7 +183,7 @@ def mg(ack, command, respond):
                                     #	"value": "XXX"
                                     #}
                                     #
-                                    ]
+                                    #]
       #                           },
       #                          {
       #                              "type": "button",
