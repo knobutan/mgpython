@@ -9,7 +9,7 @@ app = App(
 )
 
 # The echo command simply echoes on command
-@app.command("/kaz")
+@app.command("/mgb")
 def mg(ack, command, respond):
     # Acknowledge command request
     ack()
