@@ -13,6 +13,7 @@ app = App(
 def mg(ack, command, respond):
     # Acknowledge command request
     ack()
+    #Dialog
     respond(
         blocks=[
             {
@@ -120,81 +121,6 @@ def mg(ack, command, respond):
             }    
         ]
     )
-     ### If PaaSCore ###
-     #elif td in ('PC', 'fabric', 'Fabric', 'PaaSCore','paascore', 'Paascore', 'pc'):
-     #       respond(
-     #           blocks=[
-     #                   {
-     #                       "type": "section",
-     #                       "text": {"type": "mrkdwn", "text": ":mag: *Mustgather bot: Select CI*"}
-     #                   },
-     #                   {
-     #                       "type": "actions",
-     #                       "block_id": "actionsblock1",
-     #                       "elements": [
-     #                           {
-     #                               "type": "static_select",
-     #                               "placeholder": {
-     #                                   "type": "plain_text",
-     #                                   "text": "Select CI"
-     #                               },
-     #                               "action_id": "selectci",
-     #                               # This option has a list of CIs
-     #                               "options": [
-     #                                   {
-     #                                       "text": {
-     #                                           "type": "plain_text",
-     #                                          "text": "CF"
-     #                                       },
-     #                                       "value": "cf"
-     #                                   },
-     #                                   {
-     #                                       "text": {
-     #                                           "type": "plain_text",
-     #                                           "text": "Kubernetes"
-     #                                       },
-     #                                       "value": "iks"
-     #                                   },
-     #                                   {
-     #                               	    "text": {
-     #                                           "type": "plain_text",
-     #                               		    "text": "Openshift"
-     #                                       },
-     #                               	    "value": "ocp"
-     #                                   }
-                                        #
-                                    # Append the same block to add a new CI
-                                    # Add CI ID and create the same file in the git.
-                                    # https://github.com/knobutan/mgrepo/tree/main
-                                    #
-                                    #{
-                                    #	"text": {
-                                    #        "type": "plain_text",
-                                    #		 "text": "CI NAME IN THE DROPLIST"
-                                    #   },
-                                    #	"value": "XXX"
-                                    #}
-                                    #
-                                    #]
-      #                           },
-      #                          {
-      #                              "type": "button",
-      #                              "text": {
-      #                                  "type": "plain_text",
-      #                                  "text": "GET"
-      #                              },
-      #                              "value": "getmg",
-      #                              "action_id": "button_click"
-      #                          }
-      #                      ]
-      #                  },
-      #                  {
-      #                      "type": "divider"
-      #                  } 
-      #          ]
-      #      )
-     #else:
-     #       respond(":warning: *Please specify Technical domain:*\n/kaz appdev\n/kaz paascore\n")
 
 # Action when you click GET button
 @app.action("button_click")
@@ -207,7 +133,7 @@ def action_button_click(body, ack, respond):
     #
     # Get MG information by REST
     # Create a new file with the same 'value' in the new CI section. 
-    # It has to be the EXACT match
+    # It has to be the exact match
     # https://github.com/knobutan/mgrepo/tree/main
     # apic
     # ibp
