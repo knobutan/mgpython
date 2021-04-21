@@ -43,20 +43,6 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
-                                    "text": "Blockchain"
-                                },
-                                "value": "ibp"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
-                                	"text": "logDNA"
-                                },
-                                "value": "logdna"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
                                 	"text": "App Connect"
                                 },
                                 "value": "appconnect"
@@ -64,9 +50,9 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
-                                	"text": "Code Engine"
+                                    "text": "Blockchain"
                                 },
-                                "value": "codeengine"
+                                "value": "ibp"
                             },
                             {
                                 "text": {
@@ -78,9 +64,30 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
+                                	"text": "Code Engine"
+                                },
+                                "value": "codeengine"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                	"text": "logDNA"
+                                },
+                                "value": "logdna"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
                                     "text": "Kubernetes"
                                 },
                                 "value": "iks"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Sysdig"
+                                },
+                                "value": "sysdig"
                             },
                             {
                                 "text": {
