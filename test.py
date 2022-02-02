@@ -71,6 +71,13 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
+                                	"text": "Continuous Delivery"
+                                },
+                                "value": "cd"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
                                 	"text": "logDNA"
                                 },
                                 "value": "logdna"
