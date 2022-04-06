@@ -142,6 +142,7 @@ def action_button_click(body, ack, respond):
     # Acknowledge the action
     ack()
     # Get the value and text
+    repo = os.environ.get("txt_repo")
     ciname = body['state']['values']['actionsblock1']['selectci']['selected_option']['text']['text']
     ci = body['state']['values']['actionsblock1']['selectci']['selected_option']['value']
     #
@@ -153,7 +154,7 @@ def action_button_click(body, ack, respond):
     # ibp
     # iks
     # cf
-    response = requests.get("https://raw.githubusercontent.com/knobutan/mgrepo/main/" + ci)
+    response = requests.get(repo + ci)
     respond(":small_blue_diamond: * MG for " + ciname + "*\n" + response.text)
 
 @app.action("selectci")
