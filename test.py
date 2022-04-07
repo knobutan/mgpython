@@ -1,6 +1,7 @@
 import os
 import requests
 from slack_bolt import App
+import logging
 
 # Initializes your app with your bot token and signing secret
 app = App(
@@ -153,7 +154,8 @@ def action_button_click(body, ack, respond):
     # ibp
     # iks
     # cf
-    response = requests.get(os.environ.get("txt_repo") + ci)
+    repo = os.environ.get("txt_repo") + ci
+    response = requests.get(repo)
     respond(":small_blue_diamond: * MG for " + ciname + "*\n" + response.text)
 
 @app.action("selectci")
