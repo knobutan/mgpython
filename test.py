@@ -6,8 +6,6 @@ from slack_bolt import App
 app = App(
     token=os.environ.get("SLACK_BOT_TOKEN"),
     signing_secret=os.environ.get("SLACK_SIGNING_SECRET")
-    # Your text repository
-    repo = os.environ.get("txt_repo")
 )
 
 # The echo command simply echoes on command
@@ -155,7 +153,7 @@ def action_button_click(body, ack, respond):
     # ibp
     # iks
     # cf
-    response = requests.get(repo + ci)
+    response = requests.get(os.environ.get("txt_repo") + ci)
     respond(":small_blue_diamond: * MG for " + ciname + "*\n" + response.text)
 
 @app.action("selectci")
