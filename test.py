@@ -6,6 +6,8 @@ from slack_bolt import App
 app = App(
     token=os.environ.get("SLACK_BOT_TOKEN"),
     signing_secret=os.environ.get("SLACK_SIGNING_SECRET")
+    # Your text repository
+    repo = os.environ.get("txt_repo")
 )
 
 # The echo command simply echoes on command
@@ -142,7 +144,6 @@ def action_button_click(body, ack, respond):
     # Acknowledge the action
     ack()
     # Get the value and text
-    repo = os.environ.get("txt_repo")
     ciname = body['state']['values']['actionsblock1']['selectci']['selected_option']['text']['text']
     ci = body['state']['values']['actionsblock1']['selectci']['selected_option']['value']
     #
