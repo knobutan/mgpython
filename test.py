@@ -155,7 +155,7 @@ def action_button_click(body, ack, respond):
     # iks
     # cf
     repo = os.environ.get("txt_repo") + ci
-    response = requests.get(repo)
+    response = requests.get(str(repo))
     respond(":small_blue_diamond: * MG for " + ciname + "*\n" + response.text)
 
 @app.action("selectci")
