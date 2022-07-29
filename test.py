@@ -1,7 +1,6 @@
 import os
 import requests
 from slack_bolt import App
-import logging
 
 # Initializes your app with your bot token and signing secret
 app = App(
@@ -44,37 +43,9 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
-                                	"text": "App Connect"
-                                },
-                                "value": "appconnect"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
                                     "text": "Blockchain"
                                 },
                                 "value": "ibp"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
-                                    "text": "CF"
-                                },
-                                "value": "cf"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
-                                	"text": "Code Engine"
-                                },
-                                "value": "codeengine"
-                            },
-                            {
-                                "text": {
-                                    "type": "plain_text",
-                                	"text": "Continuous Delivery"
-                                },
-                                "value": "cd"
                             },
                             {
                                 "text": {
@@ -86,16 +57,30 @@ def mg(ack, command, respond):
                             {
                                 "text": {
                                     "type": "plain_text",
-                                    "text": "Kubernetes"
+                                	"text": "App Connect"
                                 },
-                                "value": "iks"
+                                "value": "appconnect"
                             },
                             {
                                 "text": {
                                     "type": "plain_text",
-                                    "text": "Sysdig"
+                                	"text": "Code Engine"
                                 },
-                                "value": "sysdig"
+                                "value": "codeengine"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "CF"
+                                },
+                                "value": "cf"
+                            },
+                            {
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "Kubernetes"
+                                },
+                                "value": "iks"
                             },
                             {
                                 "text": {
@@ -154,7 +139,6 @@ def action_button_click(body, ack, respond):
     # ibp
     # iks
     # cf
-    # repo = os.environ.get("txt_repo") + ci
     response = requests.get("https://raw.githubusercontent.com/knobutan/mgrepo/main/" + ci)
     respond(":small_blue_diamond: * MG for " + ciname + "*\n" + response.text)
 
